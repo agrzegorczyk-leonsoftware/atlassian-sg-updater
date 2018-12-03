@@ -1,0 +1,7 @@
+requires python3.6 and pipenv
+
+pipenv install
+pipenv run ./update.py --region eu-west-1 --sg-id sg-xxxxxxxx
+
+this can be used with cron to check if there was a change in list
+pipenv run ./alert.py --sync-token 1539909966
