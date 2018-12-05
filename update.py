@@ -57,7 +57,7 @@ missing_sg_ipv4_ranges = [
 obsolete_sg_ipv4_ranges = [
     sg_ip_range
     for sg_ip_range in sg_ipv4_ranges
-    if sg_ip_range['Description'].startswith(args.identifier) and ipaddress.ip_network(sg_ip_range['CidrIp']) not in atlassian_ipv4_nets
+    if sg_ip_range.get('Description', '').startswith(args.identifier) and ipaddress.ip_network(sg_ip_range['CidrIp']) not in atlassian_ipv4_nets
 ]
 
 # add missing rules
